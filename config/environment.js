@@ -3,6 +3,7 @@ require('dotenv').config()
 
 module.exports = function(environment) {
   var ENV = {
+    apiKey: process.env.API_KEY,
     modulePrefix: 'brewery-list',
     environment: environment,
     baseURL: '/',
@@ -17,9 +18,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-
-    apiKey: process.env.API_KEY,
+    }
   };
 
   if (environment === 'development') {
