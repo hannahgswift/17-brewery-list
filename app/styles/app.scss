@@ -1,4 +1,7 @@
 $gutter: 1rem;
+$white: #fff;
+$white2: #f5f8fa;
+$nav: #77060d;
 
 body {
   margin: 0;
@@ -18,22 +21,28 @@ figure {
   height: 100vh;
   display: flex;
   flex-direction: column;
-
+  background: $white2;
+  overflow: auto;
 }
 
-.app-nav {
+.app__nav {
   width: 100%;
-  background: #77060d;
+  background: $nav;
+
   .container {
     justify-content: center;
+
     .title {
       text-align: center;
       font-family: 'Rye', cursive;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: 100;
       letter-spacing: 0.4rem;
       text-transform: uppercase;
       color: #fff;
       transition: letter-spacing 300ms ease-out;
+      margin: 0.5rem auto;
+
       &:hover {
         letter-spacing: 0.6rem;
         transition: letter-spacing 200ms ease-in;
@@ -42,15 +51,7 @@ figure {
   }
 }
 
-.container {
-  max-width: 65rem;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-}
-
-.app-main {
-  // background: #000;
+.app__main {
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -59,25 +60,37 @@ figure {
   font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+  max-width: 70rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
 .brewery-list {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  flex-grow: 1;
-  margin: 1rem -1rem;
+  margin-top: 0;
+  margin-left: -1rem;
+  margin-bottom: $gutter;
 }
 
 .brewery-list__item {
   width: calc(100% / 3 - 2rem);
-  margin: 1rem;
-  box-shadow: 0.1rem 0.1rem 0.3rem gray;
+  margin-top: $gutter;
+  margin-left: $gutter;
+  box-shadow: 0.1rem 0.1rem 0.4rem gray;
 }
 
 .brewery-card {
-  background: #fff;
+  background: $white;
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 100%;
 }
 
 .logo-frame {
@@ -103,4 +116,62 @@ figure {
 
 .brewery-info__sub {
   font-size: 1rem;
+}
+
+.app__footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: $nav;
+
+  .container {
+    margin: auto;
+    justify-content: center;
+
+    .footer__content {
+      text-align: center;
+      color: $white;
+
+      a {
+        text-decoration: none;
+        color: lightgray;
+
+        &:hover {
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 980px) {
+  .container {
+    width: 90%;
+  }
+
+  .brewery-list {
+    width: 100%;
+    margin: auto;
+    margin-left: -0.5rem;
+    margin-bottom: $gutter;
+    &__item {
+      width: calc(100% / 2 - 2rem);
+    }
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 650px) {
+  .container {
+    width: 90%;
+  }
+
+  .brewery-list {
+    width: 100%;
+    margin: auto;
+    margin-bottom: $gutter;
+    &__item {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
 }
