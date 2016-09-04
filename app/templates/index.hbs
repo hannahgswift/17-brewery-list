@@ -11,19 +11,19 @@
     <div class="container">
       <ul class="brewery-list">
         {{#each model.data as |duck|}}
-        {{#if duck.images}}
-        <li class="brewery-list__item">
-          <div class="brewery-card">
-              <div class="logo-frame">
-                <img class="logo" src="{{duck.images.icon}}" alt="">
+          {{#if duck.images}}
+            <li class="brewery-list__item">
+              <div class="brewery-card">
+                <div class="logo-frame">
+                  <img class="logo" src="{{duck.images.icon}}" alt="">
+                </div>
+                <div class="brewery-info">
+                  <h2 class="brewery-name">{{duck.name}}</h2>
+                  <h3 class="brewery-info__sub">Est. {{duck.established}}</h3>
+                </div>
               </div>
-            <div class="brewery-info">
-              <h2 class="brewery-name">{{duck.name}}</h2>
-              <h3 class="brewery-info__sub">Est. {{duck.established}}</h3>
-            </div>
-          </div>
-        </li>
-        {{/if}}
+            </li>
+          {{/if}}
         {{/each}}
       </ul>
     </div>
